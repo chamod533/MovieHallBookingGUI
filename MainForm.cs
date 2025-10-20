@@ -129,7 +129,7 @@ namespace MovieHallBookingGUI
         {
             seatPanel.Controls.Clear();
 
-            // ✅ Match actual DB columns: total_rows / total_cols
+            // Match actual DB columns: total_rows / total_cols
             var dtHall = DbHelper.Query($"SELECT total_rows, total_cols FROM halls WHERE id={hallId} LIMIT 1");
             if (dtHall.Rows.Count == 0)
             {
@@ -182,10 +182,10 @@ namespace MovieHallBookingGUI
                     {
                         Text = label,
                         Tag = seatId,
-                        Width = 85,        // bigger width
-                        Height = 55,       // bigger height
+                        Width = 85,        //  width
+                        Height = 55,       // height
                         Margin = new Padding(9), // more spacing
-                        Font = new Font("Segoe UI", 10, FontStyle.Bold), // clearer text
+                        Font = new Font("Segoe UI", 10, FontStyle.Bold), 
                         BackColor = bookedSeats.Contains(seatId) ? Color.LightGray : Color.LightGreen,
                         Enabled = !bookedSeats.Contains(seatId)
                     };
